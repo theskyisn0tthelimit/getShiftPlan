@@ -1,6 +1,6 @@
 
 // Funktion zum Abrufen und Verarbeiten des JSON-Inhalts
-async function fetchAndDisplayContent() {
+async function fetchAndDisplayContent(url) {
 	// Widget-Konfiguration
 	const widget = new ListWidget();
 	widget.backgroundColor = new Color("#ffffff"); // Hintergrundfarbe des Widgets
@@ -8,7 +8,7 @@ async function fetchAndDisplayContent() {
 	// widget.setPadding(2, 8, 2, 8);
 
 	// Google Drive Freigabelink zur JSON-Datei
-	const fileURL = 'https://drive.google.com/uc?id=13UpTovPo0O_3t8-H5lFhpgYU8wS5H9Wy';
+	const fileURL = url;
 	
 	
     try {
