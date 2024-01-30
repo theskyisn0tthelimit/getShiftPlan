@@ -1,4 +1,15 @@
-async function testOutput(url) {
+async function testOutput1(url) {
+	console.log("Test1");
+	console.log(url);
+}
+
+async function testOutput2(url) {
+	console.log("Test2");
+	console.log(url);
+}
+
+async function testOutput3(url) {
+	console.log("Test3");
 	console.log(url);
 }
 
