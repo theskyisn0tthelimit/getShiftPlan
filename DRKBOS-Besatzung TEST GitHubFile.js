@@ -1,3 +1,7 @@
+async function testOutput(url) {
+	console.log(url);
+}
+
 
 // Funktion zum Abrufen und Verarbeiten des JSON-Inhalts
 async function fetchAndDisplayContent(url) {
