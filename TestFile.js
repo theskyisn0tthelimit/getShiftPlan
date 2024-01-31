@@ -28,7 +28,7 @@ const weatherCal = {
     if (!this.initialized) this.initialize(name, iCloudInUse)
     const backgroundSettingExists = this.fm.fileExists(this.bgPath)
 	  
-await this.generateAlert("Ja es klappt 2.",["Continue"])
+await this.generateAlert("Ja es klappt 3.",["Continue"])
 return
 	  
     if (!this.fm.fileExists(this.fm.joinPath(this.fm.libraryDirectory(), "weather-cal-setup"))) return await this.initialSetup(backgroundSettingExists)
