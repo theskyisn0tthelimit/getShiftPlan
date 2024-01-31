@@ -19,7 +19,7 @@ const weatherCal = {
 
     // if (!this.fm.fileExists(this.fm.joinPath(this.fm.libraryDirectory(), "weather-cal-setup"))) return await this.initialSetup(backgroundSettingExists)
     // if (backgroundSettingExists) return await this.editSettings(codeFilename, gitHubUrl)
-    await this.generateAlert("Dienstplan Script funktioniert.",["Continue"])
+    await this.generateAlert("Dienstplan Script funktioniert nicht.",["Continue"])
     // return await this.setWidgetBackground() 
     */
   },
