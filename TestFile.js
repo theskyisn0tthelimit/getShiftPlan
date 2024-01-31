@@ -27,16 +27,16 @@ const weatherCal = {
   async runSetup(name, iCloudInUse, codeFilename, gitHubUrl) {
     if (!this.initialized) this.initialize(name, iCloudInUse)
     const backgroundSettingExists = this.fm.fileExists(this.bgPath)
-
-    await this.generateAlert("Es funktioniert.",["Continue"])
-    return
-
+	  
+await this.generateAlert("Ja es klappt.",["Continue"])
+return
+	  
     if (!this.fm.fileExists(this.fm.joinPath(this.fm.libraryDirectory(), "weather-cal-setup"))) return await this.initialSetup(backgroundSettingExists)
     if (backgroundSettingExists) return await this.editSettings(codeFilename, gitHubUrl)
     await this.generateAlert("Weather Cal is set up, but you need to choose a background for this widget.",["Continue"])
     return await this.setWidgetBackground() 
   },
-/*
+
   // Run the initial setup.
   async initialSetup(imported = false) {
     let message, options
@@ -149,15 +149,14 @@ const weatherCal = {
       Script.complete()`
       
       const shouldUseQuickLook = await this.generateAlert("Your export is ready.",["Save to Files", "Display as text to copy"])
-      */
-	// if (shouldUseQuickLook) {
-      //  QuickLook.present('/*\n\n\n\nTap the Share icon in the top right.\nThen tap "Copy" to copy all of this code.\nNow you can paste into a new script.\n\n\n\n*/\n' + widgetExport)
-     // } else {
-     //   DocumentPicker.exportString(widgetExport, this.name + " export.js")
-    //  }
-     // return
-   // }
-/*
+      if (shouldUseQuickLook) {
+        QuickLook.present('/*\n\n\n\nTap the Share icon in the top right.\nThen tap "Copy" to copy all of this code.\nNow you can paste into a new script.\n\n\n\n*/\n' + widgetExport)
+      } else {
+        DocumentPicker.exportString(widgetExport, this.name + " export.js")
+      }
+      return
+    }
+
     if (response == menu.other) {
       const otherOptions = ["Re-enter API key", "Completely reset widget", "Exit"]
       const otherResponse = await this.generateAlert("Other settings",otherOptions)
@@ -527,11 +526,11 @@ const weatherCal = {
     const preference = typeof value == "string" ? value : JSON.stringify(value)
     this.fm.writeString(inputPath || this.fm.joinPath(this.fm.libraryDirectory(), name), preference)
   },
-  */
+  
 /* 
  * Widget spacing, background, and construction
  * -------------------------------------------- */
-/*
+
   // Create and return the widget.
   async createWidget(layout, name, iCloudInUse, custom) {
     if (!this.initialized) this.initialize(name, iCloudInUse)
@@ -746,11 +745,11 @@ const weatherCal = {
   right() { this.setAlignment(false, true) },
   left() { this.setAlignment(true, false) },
   center() { this.setAlignment(true, true) },
- */ 
+  
 /* 
  * Data setup functions
  * -------------------------------------------- */
-/*
+
   // Set up the event data object.
   async setupEvents() {
     const eventSettings = this.settings.events
@@ -1033,11 +1032,11 @@ const weatherCal = {
       })
     }
   },
- */ 
+  
 /* 
  * Widget items
  * -------------------------------------------- */
-/*
+
   // Display the date on the widget.
   async date(column) {
     const dateSettings = this.settings.date
@@ -1678,11 +1677,11 @@ const weatherCal = {
       if (dateText) this.provideText(dateText, dateStack, this.format.newsDate)
     }
   },
-  */
+  
 /* 
  * Helper functions
  * -------------------------------------------- */
-/*
+
   // Returns the supported OpenWeather locale codes.
   getOpenWeatherLocaleCodes() {
     return ["af","al","ar","az","bg","ca","cz","da","de","el","en","eu","fa","fi","fr","gl","he","hi","hr","hu","id","it","ja","kr","la","lt","mk","no","nl","pl","pt","pt_br","ro","ru","sv","se","sk","sl","sp","es","sr","th","tr","ua","uk","vi","zh_cn","zh_tw","zu"]
@@ -1845,9 +1844,8 @@ const weatherCal = {
           return text.toLowerCase()
         
         case (capsEnum.title):
-	*/
-      //    return text.replace(/\w\S*/g,function(a) {
-       /*     return a.charAt(0).toUpperCase() + a.substr(1).toLowerCase()
+          return text.replace(/\w\S*/g,function(a) {
+            return a.charAt(0).toUpperCase() + a.substr(1).toLowerCase()
           })
       }
       return text
@@ -2504,16 +2502,16 @@ const weatherCal = {
       dark: "In dark mode",
       light: "In light mode",
     }
-  },*/
+  },
 }
 
-//module.exports = weatherCal
+module.exports = weatherCal
 
 /*
  * Detect the current module
  * by Raymond Velasquez @supermamon
  * -------------------------------------------- */
-
+ 
 const moduleName = module.filename.match(/[^\/]+$/)[0].replace(".js","")
 if (moduleName == Script.name()) {
   await (async () => {
