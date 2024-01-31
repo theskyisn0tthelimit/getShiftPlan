@@ -28,7 +28,7 @@ const weatherCal = {
     if (!this.initialized) this.initialize(name, iCloudInUse)
     const backgroundSettingExists = this.fm.fileExists(this.bgPath)
 	  
-await this.generateAlert("Ja es klappt 2.",["Continue"])
+await this.generateAlert("Ja es klappt 1.",["Continue"])
 return
 	  
     if (!this.fm.fileExists(this.fm.joinPath(this.fm.libraryDirectory(), "weather-cal-setup"))) return await this.initialSetup(backgroundSettingExists)
@@ -479,15 +479,19 @@ return
 
   // Download a Scriptable script.
   async downloadCode(filename, url) {
+	  await this.generateAlert("Download / Update wird geöffnet.",["Continue"])
     try {
       const codeString = await new Request(url).loadString()
       if (codeString.indexOf("// Variables used by Scriptable.") < 0) {
+	      await this.generateAlert("Fehlgeschlagen, Code enthält nicht Anfangszeile.",["Continue"])
         return false
       } else {
         this.fm.writeString(this.fm.joinPath(this.fm.documentsDirectory(), filename + ".js"), codeString)
+	      await this.generateAlert("Erfolgreich.",["Continue"])
         return true
       }
     } catch {
+	    await this.generateAlert("Ganz schief gelaufen....",["Continue"])
       return false
     }
   },
