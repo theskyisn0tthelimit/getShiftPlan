@@ -21,7 +21,6 @@ const weatherCal = {
     // if (backgroundSettingExists) return await this.editSettings(codeFilename, gitHubUrl)
     await this.generateAlert("Dienstplan Script funktioniert nicht.",["Continue"])
     // return await this.setWidgetBackground() 
-    */
   },
   
   async testOutput1(url) {
