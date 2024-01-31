@@ -29,7 +29,7 @@ const weatherCal = {
 }
 	
 
-
+/*
 async function testOutput2(url) {
 	console.log("Test2");
 	console.log(url);
@@ -77,7 +77,7 @@ async function fetchAndDisplayContent(url) {
 		
 		
 		
-		/*
+		
 			"startDate": {
 		        "day": startDay,
 		        "month": startMonth,
@@ -121,7 +121,7 @@ async function fetchAndDisplayContent(url) {
 		          "KTW" : ""
 		        }
 		      }
-		*/
+		
 		
 		
 		
@@ -195,12 +195,12 @@ async function fetchAndDisplayContent(url) {
 		widget.addSpacer(4); // Abstand zwischen den Textelementen
 		
 		
-		/*
+		
 		const widgetTextoben = widget.addText(ueberschrift);
 		widgetTextoben.textColor = new Color("#000000"); // Schriftfarbe im Widget
 		widgetTextoben.font = new Font("San Francisco", 11); // Schriftgröße im Widget
 	    widget.addSpacer(4); // Abstand zwischen den Textelementen
-		*/
+		
 		
 		
 		let text = '';
@@ -293,3 +293,4 @@ if (config.runsInWidget) {
     // Wenn im Script-Modus, führe das Skript aus
     fetchAndDisplayContent();
 }
+*/
