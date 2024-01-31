@@ -2505,13 +2505,13 @@ return
   },
 }
 
-// module.exports = weatherCal
+module.exports = weatherCal
 
 /*
  * Detect the current module
  * by Raymond Velasquez @supermamon
  * -------------------------------------------- */
- /*
+ 
 const moduleName = module.filename.match(/[^\/]+$/)[0].replace(".js","")
 if (moduleName == Script.name()) {
   await (async () => {
@@ -2528,7 +2528,7 @@ if (moduleName == Script.name()) {
     Script.complete()
   })() 
 }
-*/
+
 /* 
  * Don't modify the characters below this line.
  * -------------------------------------------- */
