@@ -1,3 +1,30 @@
+const weatherCal = {
+
+  // Initialize shared properties.
+  initialize(name, iCloudInUse) {
+    this.name = name
+    this.fm = iCloudInUse ? FileManager.iCloud() : FileManager.local()
+    this.bgPath = this.fm.joinPath(this.fm.libraryDirectory(), "dp-widget-" + this.name)
+    this.prefPath = this.fm.joinPath(this.fm.libraryDirectory(), "dp-widget-preferences-" + name)
+    // this.widgetUrl = "https://raw.githubusercontent.com/mzeryck/Weather-Cal/main/weather-cal.js"
+    this.now = new Date()
+    this.data = {}
+    this.initialized = true
+  },
+
+  // Determine what to do when Weather Cal is run.
+  async runSetup(name, iCloudInUse, codeFilename, gitHubUrl) {
+    if (!this.initialized) this.initialize(name, iCloudInUse)
+    const backgroundSettingExists = this.fm.fileExists(this.bgPath)
+
+    // if (!this.fm.fileExists(this.fm.joinPath(this.fm.libraryDirectory(), "weather-cal-setup"))) return await this.initialSetup(backgroundSettingExists)
+    // if (backgroundSettingExists) return await this.editSettings(codeFilename, gitHubUrl)
+    await this.generateAlert("Dienstplan Script funktioniert.",["Continue"])
+    // return await this.setWidgetBackground() 
+  }
+}
+	
+	
 async function testOutput1(url) {
 	console.log("Test1");
 	console.log(url);
