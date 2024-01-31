@@ -13,7 +13,9 @@ const weatherCal = {
   },
 
   // Determine what to do when Weather Cal is run.
-  async runSetup(name, iCloudInUse, codeFilename, gitHubUrl) {
+  async runSetup(/*name, iCloudInUse, codeFilename, gitHubUrl*/) {
+    await this.generateAlert("Dienstplan Script funktioniert.",["Continue"])
+	  /*
     if (!this.initialized) this.initialize(name, iCloudInUse)
     const backgroundSettingExists = this.fm.fileExists(this.bgPath)
 
@@ -21,6 +23,7 @@ const weatherCal = {
     // if (backgroundSettingExists) return await this.editSettings(codeFilename, gitHubUrl)
     await this.generateAlert("Dienstplan Script funktioniert.",["Continue"])
     // return await this.setWidgetBackground() 
+    */
   },
   
   async testOutput1(url) {
