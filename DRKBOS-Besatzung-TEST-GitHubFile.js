@@ -21,14 +21,8 @@ const weatherCal = {
     // if (backgroundSettingExists) return await this.editSettings(codeFilename, gitHubUrl)
     await this.generateAlert("Dienstplan Script funktioniert.",["Continue"])
     // return await this.setWidgetBackground() 
-  },
-  
-  async testOutput1(url) {
-	  // console.log("Test1");
-	  // console.log(url);
-	  await this.generateAlert("Dienstplan Script funktioniert.",["Continue"])
-	}
-}
+  }
+
 	
 module.exports = weatherCal
 
