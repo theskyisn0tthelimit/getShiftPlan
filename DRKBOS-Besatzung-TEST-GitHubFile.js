@@ -22,7 +22,7 @@ const weatherCal = {
     await this.generateAlert("Dienstplan Script funktioniert.",["Continue"])
     // return await this.setWidgetBackground() 
   }
-
+}
 	
 // module.exports = weatherCal
 
