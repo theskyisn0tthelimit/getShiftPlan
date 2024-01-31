@@ -30,6 +30,30 @@ const weatherCal = {
 	}
 }
 	
+module.exports = weatherCal
+
+/*
+ * Detect the current module
+ * by Raymond Velasquez @supermamon
+ * -------------------------------------------- */
+ 
+const moduleName = module.filename.match(/[^\/]+$/)[0].replace(".js","")
+if (moduleName == Script.name()) {
+  await (async () => {
+    // Comment out the return to run a test.
+    return
+    const layout = `
+    row
+      column
+    `
+    const name = "Weather Cal Widget Builder"
+    await weatherCal.runSetup(name, true, "Weather Cal code", "https://raw.githubusercontent.com/mzeryck/Weather-Cal/main/weather-cal-code.js")
+    const w = await weatherCal.createWidget(layout, name, true)
+    w.presentLarge()
+    Script.complete()
+  })() 
+}
+
 
 /*
 async function testOutput2(url) {
