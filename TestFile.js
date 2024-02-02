@@ -26,15 +26,25 @@ const weatherCal = {
   // Determine what to do when Weather Cal is run.
   async runSetup(name, iCloudInUse, codeFilename, gitHubUrl) {
     if (!this.initialized) this.initialize(name, iCloudInUse)
-    const backgroundSettingExists = this.fm.fileExists(this.bgPath)
+    // const backgroundSettingExists = this.fm.fileExists(this.bgPath)
 	  
-await this.generateAlert("Ja es klappt 2 NEU.",["Continue"])
-return
+	await this.generateAlert("Ja es klappt 2 NEU.",["Continue"])
+	return
 	  
     if (!this.fm.fileExists(this.fm.joinPath(this.fm.libraryDirectory(), "weather-cal-setup"))) return await this.initialSetup(backgroundSettingExists)
     if (backgroundSettingExists) return await this.editSettings(codeFilename, gitHubUrl)
     await this.generateAlert("Weather Cal is set up, but you need to choose a background for this widget.",["Continue"])
     return await this.setWidgetBackground() 
+  },
+
+  async myOwnWidget() {
+	  	// Widget-Konfiguration
+		const widget = new ListWidget();
+		widget.backgroundColor = new Color(colorBackground); // Hintergrundfarbe des Widgets
+		// Setze den Randabstand: oben, links, unten, rechts
+		widget.setPadding(paddingTop, paddingLeft, paddingBottom, paddingRight);
+
+	  return widget
   },
 
   // Run the initial setup.
