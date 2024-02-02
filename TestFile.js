@@ -40,9 +40,10 @@ const weatherCal = {
   async myOwnWidget() {
 	  	// Widget-Konfiguration
 		const widget = new ListWidget();
-		widget.backgroundColor = new Color(colorBackground); // Hintergrundfarbe des Widgets
+		widget.backgroundColor = new Color("#ffffff"); // Hintergrundfarbe des Widgets
+	  	const widgetText = widget.addText("Hallo Welt");
 		// Setze den Randabstand: oben, links, unten, rechts
-		widget.setPadding(paddingTop, paddingLeft, paddingBottom, paddingRight);
+		// widget.setPadding(paddingTop, paddingLeft, paddingBottom, paddingRight);
 
 	  return widget
   },
