@@ -66,8 +66,8 @@ async getWidgetRequest(action) {
   // Definiere die Parameter, die du an das Google Apps Script übergeben möchtest
   const params = {
     action: action
-    // Weitere Parameter können hier hinzugefügt werden, falls benötigt
   };
+
 
   // Baue die URL mit den Parametern
   const query = Object.keys(params)
