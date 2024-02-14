@@ -21,6 +21,7 @@ const weatherCal = {
     this.now = new Date()
     this.data = {}
     this.initialized = true
+    this.version = "0.1"
   },
 
   // Determine what to do when Weather Cal is run.
@@ -47,6 +48,10 @@ const weatherCal = {
 
 	  return widget
   },
+
+ async getVersion() {
+	 return this.version
+ }
 
   // Run the initial setup.
   async initialSetup(imported = false) {
