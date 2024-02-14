@@ -51,17 +51,48 @@ const weatherCal = {
   
   
   async getVersion() {
-	const theVersion = this.version;
-	return theVersion
-  },
-
-  async theVersion() {
 	return this.version
   },
 
-  async theVersionInText() {
-	return "0.1"
+  async checkUpdate() {
+	const theRequest = await this.getWidgetRequest("getGitHubLink");  
+	return theRequest
+	  // return this.version
   },
+
+async getWidgetRequest(action) {
+	const scriptURL = "https://script.google.com/macros/s/AKfycbxu0mLPt0WggTAL5k1Sdm6T2VsyTBmiFXKjD6uHoVtoJKAy4QbnLa97rlPVc3qDvWAP/exec"; // Ersetze mit deiner tatsächlichen Script-URL
+
+  // Definiere die Parameter, die du an das Google Apps Script übergeben möchtest
+  const params = {
+    action: action
+    // Weitere Parameter können hier hinzugefügt werden, falls benötigt
+  };
+
+  // Baue die URL mit den Parametern
+  const query = Object.keys(params)
+    .map(key => key + "=" + encodeURIComponent(params[key]))
+    .join("&");
+
+  const url = scriptURL + "?" + query;
+
+  try {
+    // HTTP-Anfrage an das Google Apps Script senden
+    const request = new Request(url);
+    const responseText = await request.loadString(); // Lade die Antwort als Text
+
+    try {
+      const response = JSON.parse(responseText); // Versuche, die Serverantwort als JSON zu parsen
+      return response; // Rückgabe des JSON-Objekts
+    } catch (error) {
+      console.log("Fehler beim Parsen der Serverantwort:", error);
+      return { error: "Fehler beim Parsen der Serverantwort" };
+    }
+  } catch (error) {
+    console.log("Fehler beim Senden der Anfrage:", error);
+    return { error: "Fehler beim Senden der Anfrage" };
+  }
+}
 
   // Run the initial setup.
   async initialSetup(imported = false) {
