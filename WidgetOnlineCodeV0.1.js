@@ -102,7 +102,7 @@ async getWidgetRequest(action) {
     console.log("Fehler beim Senden der Anfrage:", error);
     return { error: "Fehler beim Senden der Anfrage" };
   }
-}
+},
 
 */
 
