@@ -48,17 +48,27 @@ const weatherCal = {
 
 	  return widget
   },
+  
+  async myOwnWidget2() {
+	  return "Hallo"
+  },
+  
+  async myOwnWidget3() {
+	const theVar = "Hallo";
+	return theVar
+  },
 
   async getVersion() {
-	 return this.version
+	const theVersion = this.version;
+	return theVersion
   },
 
   async theVersion() {
-	 return this.version
+	return this.version
   },
 
   async theVersionInText() {
-	 return "0.1"
+	return "0.1"
   },
 
   // Run the initial setup.
