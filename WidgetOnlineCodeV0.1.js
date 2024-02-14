@@ -51,7 +51,7 @@ const weatherCal = {
 
  async getVersion() {
 	 return this.version
- }
+ },
 
   // Run the initial setup.
   async initialSetup(imported = false) {
