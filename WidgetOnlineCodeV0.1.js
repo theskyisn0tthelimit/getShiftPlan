@@ -54,6 +54,7 @@ const weatherCal = {
 	return this.version
   },
 
+/*
   async checkUpdate() {
 	try {
 		const theRequest = await this.getWidgetRequest("getGitHubLink"); 
@@ -102,6 +103,8 @@ async getWidgetRequest(action) {
     return { error: "Fehler beim Senden der Anfrage" };
   }
 }
+
+*/
 
   // Run the initial setup.
   async initialSetup(imported = false) {
