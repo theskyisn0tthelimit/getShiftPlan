@@ -49,9 +49,9 @@ const weatherCal = {
 	  return widget
   },
 
- async getVersion() {
+  async getVersion() {
 	 return this.version
- },
+  },
 
   // Run the initial setup.
   async initialSetup(imported = false) {
