@@ -53,6 +53,14 @@ const weatherCal = {
 	 return this.version
   },
 
+  async theVersion() {
+	 return this.version
+  },
+
+  async theVersionInText() {
+	 return "0.1"
+  },
+
   // Run the initial setup.
   async initialSetup(imported = false) {
     let message, options
