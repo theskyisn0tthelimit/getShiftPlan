@@ -55,14 +55,23 @@ const weatherCal = {
   },
 
   async checkUpdate() {
-	const theRequest = await this.getWidgetRequest("getGitHubLink");  
-	return theRequest
-	  // return this.version
+	try {
+		const theRequest = await this.getWidgetRequest("getGitHubLink"); 
+		return theRequest
+	} catch (error) {
+		return "Hat nicht funktioniert"
+	}  
   },
 
+
+
+	
 async getWidgetRequest(action) {
 	const scriptURL = "https://script.google.com/macros/s/AKfycbxu0mLPt0WggTAL5k1Sdm6T2VsyTBmiFXKjD6uHoVtoJKAy4QbnLa97rlPVc3qDvWAP/exec"; // Ersetze mit deiner tatsächlichen Script-URL
 
+
+
+	
   // Definiere die Parameter, die du an das Google Apps Script übergeben möchtest
   const params = {
     action: action
