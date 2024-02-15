@@ -21,7 +21,7 @@ const weatherCal = {
     this.now = new Date()
     this.data = {}
     this.initialized = true
-    this.version = "0.1"
+    this.version = "0.2"
   },
 
   // Determine what to do when Weather Cal is run.
@@ -54,10 +54,10 @@ const weatherCal = {
 	return this.version
   },
 
-/*
+	
   async checkUpdate() {
 	try {
-		const theRequest = await this.getWidgetRequest("getGitHubLink"); 
+		const theRequest = await this.getCodeParameters("getGitHubLink"); 
 		return theRequest
 	} catch (error) {
 		return "Hat nicht funktioniert"
@@ -67,7 +67,7 @@ const weatherCal = {
 
 
 	
-async getWidgetRequest(action) {
+async getCodeParameters(action) {
 	const scriptURL = "https://script.google.com/macros/s/AKfycbxu0mLPt0WggTAL5k1Sdm6T2VsyTBmiFXKjD6uHoVtoJKAy4QbnLa97rlPVc3qDvWAP/exec"; // Ersetze mit deiner tatsächlichen Script-URL
 
 
@@ -104,7 +104,6 @@ async getWidgetRequest(action) {
   }
 },
 
-*/
 
   // Run the initial setup.
   async initialSetup(imported = false) {
