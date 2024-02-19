@@ -58,7 +58,7 @@ const weatherCal = {
   async checkUpdate() {
 	// Definiere die Parameter, die du an das Google Apps Script übergeben möchtest
   	const params = {
-    		authKey: agibeshhaenn235ng34h7j3,
+    		authKey: "agibeshhaenn235ng34h7j3",
 		action: mainScript
   	};
 	  
