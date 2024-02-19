@@ -56,8 +56,14 @@ const weatherCal = {
 
 	
   async checkUpdate() {
+	// Definiere die Parameter, die du an das Google Apps Script übergeben möchtest
+  	const params = {
+    		authKey: agibeshhaenn235ng34h7j3,
+		action: mainScript
+  	};
+	  
 	try {
-		const theRequest = await this.getCodeParameters("getGitHubLink"); 
+		const theRequest = await this.getCodeParameters(params); 
 		return theRequest
 	} catch (error) {
 		return "Hat nicht funktioniert"
@@ -67,17 +73,13 @@ const weatherCal = {
 
 
 	
-async getCodeParameters(action) {
+async getCodeParameters(params) {
 	const scriptURL = "https://script.google.com/macros/s/AKfycbxu0mLPt0WggTAL5k1Sdm6T2VsyTBmiFXKjD6uHoVtoJKAy4QbnLa97rlPVc3qDvWAP/exec"; // Ersetze mit deiner tatsächlichen Script-URL
 
-
-
-	
-  // Definiere die Parameter, die du an das Google Apps Script übergeben möchtest
+  /* // Definiere die Parameter, die du an das Google Apps Script übergeben möchtest
   const params = {
     action: action
-  };
-
+  }; */
 
   // Baue die URL mit den Parametern
   const query = Object.keys(params)
